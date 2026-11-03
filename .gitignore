@@ -1,0 +1,23 @@
+# Environment
+.env
+.env.local
+
+# Node / frontend
+node_modules/
+dist/
+
+# Java / backend
+target/
+
+# IDE
+.idea/
+*.iml
+.vscode/*
+!.vscode/extensions.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
