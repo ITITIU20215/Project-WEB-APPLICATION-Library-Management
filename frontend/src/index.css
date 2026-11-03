@@ -1,0 +1,39 @@
+:root {
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+  line-height: 1.5;
+  color: #1f2933;
+  background-color: #f7f7f5;
+}
+
+body {
+  margin: 0;
+}
+
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 16px;
+}
+
+.status {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-weight: 600;
+  background: #e4e7eb;
+}
+
+.status-up {
+  background: #d1f2dc;
+  color: #14532d;
+}
+
+.status-unreachable {
+  background: #fde2e1;
+  color: #7f1d1d;
+}
