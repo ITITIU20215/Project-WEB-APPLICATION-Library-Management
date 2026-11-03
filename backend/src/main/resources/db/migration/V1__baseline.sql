@@ -1,0 +1,1 @@
+-- Baseline. Schema is added per feature in later migrations.
