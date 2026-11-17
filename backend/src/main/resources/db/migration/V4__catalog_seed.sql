@@ -1,0 +1,111 @@
+-- F03 Catalog: sample data for development and demos (20 books).
+-- Kept separate from V3 so it is easy to drop later (see docs/features/F03-catalog.md).
+-- English titles use their real ISBNs; Vietnamese titles use sample ISBNs with valid checksums.
+
+INSERT INTO publishers (id, name, created_at, updated_at) VALUES
+    (1,  'Prentice Hall',      UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (2,  'Addison-Wesley',     UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (3,  'MIT Press',          UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (4,  'Bloomsbury',         UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (5,  'Signet Classics',    UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (6,  'Harper Perennial',   UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (7,  'Scribner',           UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (8,  'HarperCollins',      UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (9,  'NXB Kim Đồng',       UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (10, 'NXB Trẻ',            UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (11, 'NXB Văn Học',        UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (12, 'NXB Hội Nhà Văn',    UTC_TIMESTAMP(6), UTC_TIMESTAMP(6));
+
+INSERT INTO categories (id, name, description, created_at, updated_at) VALUES
+    (1,  'Computer Science',      'Programming and computing',          UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (2,  'Software Engineering',  'Design, craftsmanship and practice', UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (3,  'Algorithms',            'Algorithms and data structures',     UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (4,  'Fiction',               'Novels and stories',                 UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (5,  'Fantasy',               NULL,                                 UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (6,  'Classics',              'Classic literature',                 UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (7,  'History',               NULL,                                 UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (8,  'Văn học Việt Nam',      'Tác phẩm văn học Việt Nam',          UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (9,  'Thiếu nhi',             'Sách cho thiếu nhi',                 UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (10, 'Philosophy',            NULL,                                 UTC_TIMESTAMP(6), UTC_TIMESTAMP(6));
+
+INSERT INTO authors (id, name, bio, created_at, updated_at) VALUES
+    (1,  'Robert C. Martin',    'Software engineer, known as "Uncle Bob".', UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (2,  'Joshua Bloch',        NULL, UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (3,  'David Thomas',        NULL, UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (4,  'Andrew Hunt',         NULL, UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (5,  'Erich Gamma',         NULL, UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (6,  'Richard Helm',        NULL, UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (7,  'Ralph Johnson',       NULL, UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (8,  'John Vlissides',      NULL, UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (9,  'Martin Fowler',       NULL, UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (10, 'Thomas H. Cormen',    NULL, UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (11, 'Charles E. Leiserson', NULL, UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (12, 'Ronald L. Rivest',    NULL, UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (13, 'Clifford Stein',      NULL, UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (14, 'J.K. Rowling',        NULL, UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (15, 'George Orwell',       NULL, UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (16, 'Harper Lee',          NULL, UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (17, 'F. Scott Fitzgerald', NULL, UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (18, 'Yuval Noah Harari',   NULL, UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (19, 'Paulo Coelho',        NULL, UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (20, 'Tô Hoài',             'Nhà văn Việt Nam (1920–2014).', UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (21, 'Vũ Trọng Phụng',      'Nhà văn, nhà báo Việt Nam (1912–1939).', UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (22, 'Nguyễn Du',           'Đại thi hào dân tộc (1766–1820).', UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (23, 'Ngô Tất Tố',          'Nhà văn, nhà báo Việt Nam (1894–1954).', UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (24, 'Nguyễn Nhật Ánh',     'Nhà văn Việt Nam, sinh năm 1955.', UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (25, 'Bảo Ninh',            'Nhà văn Việt Nam, sinh năm 1952.', UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (26, 'Nam Cao',             'Nhà văn Việt Nam (1915–1951).', UTC_TIMESTAMP(6), UTC_TIMESTAMP(6));
+
+INSERT INTO books (id, isbn, title, subtitle, publisher_id, publication_year, language, pages, description, cover_url, created_at, updated_at) VALUES
+    (1,  '9780132350884', 'Clean Code', 'A Handbook of Agile Software Craftsmanship', 1, 2008, 'en', 464,
+         'Principles and practices for writing readable, maintainable code.', NULL, UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (2,  '9780134685991', 'Effective Java', NULL, 2, 2018, 'en', 412,
+         'Best practices for the Java platform.', NULL, UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (3,  '9780135957059', 'The Pragmatic Programmer', 'Your Journey to Mastery', 2, 2019, 'en', 352,
+         '20th anniversary edition.', NULL, UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (4,  '9780201633610', 'Design Patterns', 'Elements of Reusable Object-Oriented Software', 2, 1994, 'en', 395,
+         'The "Gang of Four" catalogue of 23 design patterns.', NULL, UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (5,  '9780134757599', 'Refactoring', 'Improving the Design of Existing Code', 2, 2018, 'en', 448,
+         'Second edition, with examples in JavaScript.', NULL, UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (6,  '9780262033848', 'Introduction to Algorithms', NULL, 3, 2009, 'en', 1312,
+         'Third edition of the classic algorithms textbook.', NULL, UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (7,  '9780747532699', 'Harry Potter and the Philosopher''s Stone', NULL, 4, 1997, 'en', 223,
+         'The first Harry Potter novel.', NULL, UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (8,  '9780451524935', '1984', NULL, 5, 1961, 'en', 328,
+         'A dystopian novel about surveillance and totalitarianism.', NULL, UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (9,  '9780061120084', 'To Kill a Mockingbird', NULL, 6, 2006, 'en', 336,
+         NULL, NULL, UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (10, '9780743273565', 'The Great Gatsby', NULL, 7, 2004, 'en', 180,
+         NULL, NULL, UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (11, '9780062316097', 'Sapiens', 'A Brief History of Humankind', 8, 2015, 'en', 464,
+         NULL, NULL, UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (12, '9780062315007', 'The Alchemist', NULL, 8, 2014, 'en', 208,
+         NULL, NULL, UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (13, '9786041234567', 'Dế Mèn Phiêu Lưu Ký', NULL, 9, 2020, 'vi', 144,
+         'Cuộc phiêu lưu của chú Dế Mèn.', NULL, UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (14, '9786041234574', 'Số Đỏ', NULL, 11, 2019, 'vi', 244,
+         'Tiểu thuyết trào phúng.', NULL, UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (15, '9786041234581', 'Truyện Kiều', NULL, 11, 2018, 'vi', 320,
+         'Truyện thơ Nôm của Nguyễn Du.', NULL, UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (16, '9786041234598', 'Tắt Đèn', NULL, 11, 2019, 'vi', 200,
+         NULL, NULL, UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (17, '9786049876509', 'Mắt Biếc', NULL, 10, 2019, 'vi', 300,
+         NULL, NULL, UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (18, '9786049876516', 'Cho Tôi Xin Một Vé Đi Tuổi Thơ', NULL, 10, 2018, 'vi', 220,
+         NULL, NULL, UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (19, '9786049876523', 'Nỗi Buồn Chiến Tranh', NULL, 12, 2019, 'vi', 340,
+         NULL, NULL, UTC_TIMESTAMP(6), UTC_TIMESTAMP(6)),
+    (20, '9786049876530', 'Chí Phèo', NULL, 11, 2020, 'vi', 180,
+         NULL, NULL, UTC_TIMESTAMP(6), UTC_TIMESTAMP(6));
+
+INSERT INTO book_authors (book_id, author_id) VALUES
+    (1, 1), (2, 2), (3, 3), (3, 4), (4, 5), (4, 6), (4, 7), (4, 8), (5, 9),
+    (6, 10), (6, 11), (6, 12), (6, 13), (7, 14), (8, 15), (9, 16), (10, 17),
+    (11, 18), (12, 19), (13, 20), (14, 21), (15, 22), (16, 23), (17, 24), (18, 24),
+    (19, 25), (20, 26);
+
+INSERT INTO book_categories (book_id, category_id) VALUES
+    (1, 1), (1, 2), (2, 1), (2, 2), (3, 1), (3, 2), (4, 1), (4, 2), (5, 1), (5, 2),
+    (6, 1), (6, 3), (7, 4), (7, 5), (7, 9), (8, 4), (8, 6), (9, 4), (9, 6), (10, 4), (10, 6),
+    (11, 7), (12, 4), (12, 10), (13, 8), (13, 9), (14, 6), (14, 8), (15, 6), (15, 8),
+    (16, 6), (16, 8), (17, 8), (18, 8), (18, 9), (19, 8), (20, 6), (20, 8);
